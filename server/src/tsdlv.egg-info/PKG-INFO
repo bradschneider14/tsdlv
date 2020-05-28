@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: tsdlv
+Version: 0.1.0
+Summary: A package providing a server application for viewing time series log data
+Home-page: https://github.com/bradschneider14/tsdlv
+Author: Brad Schneider
+Author-email: bradschneider14@gmail.com
+License: LICENSE.txt
+Description: UNKNOWN
+Platform: UNKNOWN
