@@ -47,11 +47,11 @@ class SessionFileView(MethodView):
 
       if not 'files' in metadata:
         metadata['files'] = []
-      metadata['files'].append({'name': new_file.filename})        
+      metadata['files'].append({'id': str(uuid.uuid4()), 'name': new_file.filename})        
       
       with open(metadata_path, mode="w") as metadata_file:
         metadata_file.write(json.dumps(metadata))
-        
+
     except OSError as exc:
       logging.error(f'Unable to update metadata file at {metadata_path}', exc_info=exc)
       return make_response('Error updating session', 500)
@@ -62,8 +62,8 @@ class SessionFileView(MethodView):
     logging.debug('Received GET request to session file view')
 
     if not session_id:
-      logging.error('Cannot upload a file without a session id.')
-      return make_response('Cannot upload a file without a session.', 400)
+      logging.error('Cannot get files without a session id.')
+      return make_response('Cannot get files without a session.', 400)
 
     session_data_loc = get_config_value('session_data_loc')
     session_dir_path = os.path.join(session_data_loc, str(session_id))

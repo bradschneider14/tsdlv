@@ -1,0 +1,9 @@
+{
+  "iter_begin": "string",
+  "iter_vars": [
+    { 
+      "var_name": "var_x",
+      "var_expr": "var_x={[0-9]*.[0-9]+}"
+    }
+  ]  
+}
